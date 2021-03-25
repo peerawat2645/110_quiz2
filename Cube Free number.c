@@ -1,26 +1,27 @@
 #include <stdio.h>
-int check(int n){
-    int i;
-    if(n==1)
-        return 1;
-    for(i=2;i*i*i<=n;i++)
-        if(n%(i*i*i)==0)
-            return 0;
-    return 1;
-}
-void cfree(int n){
-    int i;
-    for(i=1;i<=n;i++){
-        if(check(i))
-            printf("%d",i);
-        else
-            printf("Not Cube Free");
-    }
-}
+int a[1000001]={0};
 int main(){
-    int n,i,j,k=0,a,c;
-    int b[1000];
+    int i,j,k,n;
+    for(i=2;i<100;i++){
+        if(a[i]==0){
+            k=i*i*i;
+            for(j=k;j<=1000000;j+=k){
+                a[j]=1;
+            }
+        }
+    }
+    k=1;
+    for(i=1;i<=1000000;i++)
+    {
+        if(a[i]==0)
+            a[i]=k++;
+    }
     scanf("%d",&n);
-    cfree(n);
+    if(n==1)
+        printf("1");
+    else if(a[n]!=1)
+        printf("%d",a[n]);
+    else
+        printf("Not Cube Free");
 
 }
