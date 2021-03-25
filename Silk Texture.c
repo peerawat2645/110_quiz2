@@ -17,7 +17,7 @@ int main(){
     }
     for(i=0;i<n;i++)
     {
-        for(j=0;j<71;j++)
+        for(j=0;j<70;j++)
             printf("%c",co[i][j]);
         printf("\n");
     }

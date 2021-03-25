@@ -2,22 +2,24 @@
 #include <string.h>
 int main()
 {
-    int a,b,c,i;
-    unsigned int n,y=0;
-    scanf("%u",&n);
-    for(i=1;i<n;i++)
+    int a,b,c,i,n,y=0;
+    scanf("%d",&n);
+    if(n>=1&&n<=1000000)
     {
-        a=i;
-        b=0;
-        while(a){
-            c=a%10;
-            a/=10;
-            b=b*10+c;
+        for(i=1; i<=n; i++)
+        {
+            a=i;
+            b=0;
+            while(a!=0)
+            {
+                c=a%10;
+                a/=10;
+                b=b*10+c;
+            }
+            if(i==b)
+                y++;
+
         }
-        if(i==b)
-            y++;
-
+        printf("%d",y);
     }
-    printf("%u",y);
-
 }
