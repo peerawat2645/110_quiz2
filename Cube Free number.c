@@ -2,6 +2,7 @@
 int a[1000001]={0};
 int main(){
     int i,j,k,n;
+    scanf("%d",&n);
     for(i=2;i<100;i++){
         if(a[i]==0){
             k=i*i*i;
@@ -16,7 +17,7 @@ int main(){
         if(a[i]==0)
             a[i]=k++;
     }
-    scanf("%d",&n);
+
     if(n==1)
         printf("1");
     else if(a[n]!=1)
